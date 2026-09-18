@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Order Processing Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="title-container">
+                <h1>Real-Time Order Stream</h1>
+                <div class="status-indicator">
+                    <span id="connection-dot" class="dot disconnected"></span>
+                    <span id="connection-text">Connecting to Kafka...</span>
+                </div>
+            </div>
+            <div class="metrics-card">
+                <h2>Running Average Price</h2>
+                <div class="price-display">
+                    <span class="currency">$</span>
+                    <span id="average-price">0.00</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="panel orders-panel">
+                <div class="panel-header">
+                    <h2>Live Orders</h2>
+                    <span class="badge">Incoming</span>
+                </div>
+                <div class="feed-container" id="orders-feed">
+                    <!-- Orders will be injected here -->
+                </div>
+            </div>
+
+            <div class="panel alerts-panel">
+                <div class="panel-header">
+                    <h2>System Alerts</h2>
+                    <span class="badge error">DLQ / Retries</span>
+                </div>
+                <div class="feed-container" id="alerts-feed">
+                    <!-- Alerts will be injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

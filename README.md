@@ -28,9 +28,9 @@ It satisfies the assignment requirements:
    pip install -r requirements.txt
    ```
 
-## Running the Application
+## Running the Application (Terminal Mode)
 
-To demonstrate the system live, you will need two separate terminal windows.
+To demonstrate the system in the terminal, you will need two separate terminal windows.
 
 ### 1. Start the Consumer
 In the first terminal, run:
@@ -45,6 +45,28 @@ In the second terminal, run:
 python producer.py
 ```
 *The producer will generate randomized order messages with Avro serialization and send them to the `orders` topic.*
+
+## Running the Dashboard (Frontend Mode)
+
+We have built a beautiful, real-time web dashboard to demonstrate the system live.
+
+### 1. Start the Web Server
+In your terminal, run:
+```bash
+uvicorn app:app
+```
+*This starts the FastAPI web server and background consumer.*
+
+### 2. Open the Dashboard
+Open your web browser and navigate to:
+[http://localhost:8000](http://localhost:8000)
+
+### 3. Start the Producer
+Open a new terminal window and run:
+```bash
+python producer.py
+```
+*Watch the browser dashboard update in real-time as orders flow through Kafka!*
 
 ## How to Verify the Requirements
 

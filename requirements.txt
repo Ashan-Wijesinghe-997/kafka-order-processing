@@ -1,3 +1,6 @@
-confluent-kafka
+confluent-kafka[schema-registry]
 fastavro
 requests
+fastapi
+uvicorn
+websockets
